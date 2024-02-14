@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChalkBoardChat.App.Models
+namespace ChalkBoardChat.Data.Models
 {
     internal class MessageModel
     {
