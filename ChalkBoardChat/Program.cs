@@ -15,10 +15,13 @@ var connectionString = builder.Configuration.GetConnectionString("AuthConnection
 // Lägg till AuthDbContext-tjänsten i behållaren och konfigurera den för att använda en SQL Server-databas med angiven anslutningssträng
 builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(connectionString));
 
+
+// AppDbContext för att spara messages
+var connectionStringMessages = builder.Configuration.GetConnectionString("AppDbConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionStringMessages));
+
 // Lägg till tjänster för Identity i behållaren, konfigurera användarklass (IdentityUser) och rollklass (IdentityRole), och ange att de ska använda AuthDbContext för att lagra användar- och rollinformation
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
-
-
 
 
 var app = builder.Build();

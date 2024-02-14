@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChalkBoardChat.Data.Models
 {
-    internal class MessageModel
+    public class MessageModel
     {
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public string? Message { get; set; }
+        public string Username { get; set; }
     }
 }

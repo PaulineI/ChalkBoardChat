@@ -5,9 +5,9 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChalkBoardChat", "ChalkBoardChat\ChalkBoardChat.csproj", "{5F9968C8-AEF2-4E24-A984-1ADC5DB3D470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChalkBoardChat.App", "ChalkBoardChat.App\ChalkBoardChat.App.csproj", "{10604A06-0632-4F63-922F-36EB65C81657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChalkBoardChat.App", "ChalkBoardChat.App\ChalkBoardChat.App.csproj", "{10604A06-0632-4F63-922F-36EB65C81657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChalkBoardChat.Data", "ChalkBoardChat.Data\ChalkBoardChat.Data.csproj", "{2E769926-F7AE-4AD6-BDEE-048698BD6A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChalkBoardChat.Data", "ChalkBoardChat.Data\ChalkBoardChat.Data.csproj", "{2E769926-F7AE-4AD6-BDEE-048698BD6A62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
