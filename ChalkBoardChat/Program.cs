@@ -3,7 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-/// Init
+/// Init /// Kod
 
 var app = builder.Build();
 
