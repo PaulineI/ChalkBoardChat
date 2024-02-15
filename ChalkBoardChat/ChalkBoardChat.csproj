@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChalkBoardChat.App\ChalkBoardChat.App.csproj" />
-    <ProjectReference Include="..\ChalkBoardChat.Data\ChalkBoardChat.Data.csproj" />
   </ItemGroup>
 
 </Project>

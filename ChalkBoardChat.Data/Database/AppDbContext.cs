@@ -1,5 +1,4 @@
 ﻿using ChalkBoardChat.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace ChalkBoardChat.Data.Database
 {
-    public class AuthDbContext : IdentityDbContext
-
+    public class AppDbContext : DbContext
     {
-
-        public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options)
-        {
+        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
+        { 
 
         }
+        public DbSet<MessageModel> Messages { get; set; }
 
-        
     }
 }
