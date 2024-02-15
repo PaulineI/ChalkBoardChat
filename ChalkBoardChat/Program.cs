@@ -12,19 +12,22 @@ builder.Services.AddRazorPages();
 
 
 
-// H�mta anslutningsstr�ngen fr�n konfigurationen
+// Hämta anslutningssträngen från konfigurationen
 var connectionString = builder.Configuration.GetConnectionString("AuthConnection");
 
-// L�gg till AuthDbContext-tj�nsten i beh�llaren och konfigurera den f�r att anv�nda en SQL Server-databas med angiven anslutningsstr�ng
+// Lägg till AuthDbContext-tjänsten i behållaren och konfigurera den för att använda en SQL Server-databas med angiven anslutningssträng
 builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(connectionString));
 
 
 
 
-// L�gg till tj�nster f�r Identity i beh�llaren, konfigurera anv�ndarklass (IdentityUser) och rollklass (IdentityRole), och ange att de ska anv�nda AuthDbContext f�r att lagra anv�ndar- och rollinformation
+
+// AppDbContext för att spara messages
+var connectionStringMessages = builder.Configuration.GetConnectionString("AppDbConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionStringMessages));
+
+// Lägg till tjänster för Identity i behållaren, konfigurera användarklass (IdentityUser) och rollklass (IdentityRole), och ange att de ska använda AuthDbContext för att lagra användar- och rollinformation
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
-
-
 
 
 var app = builder.Build();
@@ -42,10 +45,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//Kollar vilken roll som �r inloggad
+//Kollar vilken roll som är inloggad
 app.UseAuthentication();
 
-app.UseAuthorization();  // Anv�nd auktorisering f�r att best�mma om en anv�ndare har beh�righet att komma �t en viss resurs
+app.UseAuthorization();  // Använd auktorisering för att bestämma om en användare har behörighet att komma åt en viss resurs
 
 app.MapRazorPages();
 
