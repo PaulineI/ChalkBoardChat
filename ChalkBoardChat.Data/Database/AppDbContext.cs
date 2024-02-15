@@ -10,11 +10,14 @@ namespace ChalkBoardChat.Data.Database
 {
     public class AppDbContext : DbContext
     {
+
+        // DbSet för MessageModel
+
         public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)
         { 
 
         }
-        public DbSet<MessageModel> Messages { get; set; }
+}
 
     }
 }
