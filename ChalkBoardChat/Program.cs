@@ -9,11 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+
+
+
 // Hämta anslutningssträngen från konfigurationen
 var connectionString = builder.Configuration.GetConnectionString("AuthConnection");
 
 // Lägg till AuthDbContext-tjänsten i behållaren och konfigurera den för att använda en SQL Server-databas med angiven anslutningssträng
 builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(connectionString));
+
+
+
 
 // Lägg till tjänster för Identity i behållaren, konfigurera användarklass (IdentityUser) och rollklass (IdentityRole), och ange att de ska använda AuthDbContext för att lagra användar- och rollinformation
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
